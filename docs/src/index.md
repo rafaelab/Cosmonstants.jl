@@ -17,7 +17,7 @@ end
 ```
 
 ```@autodocs
-Modules = [PhysicalConstants]
+Modules = [PhysicalConstantsExtended]
 ```
 
 
