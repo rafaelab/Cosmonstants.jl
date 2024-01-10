@@ -12,6 +12,9 @@ import PhysicalConstants.CODATA2018: c_0, ħ, h, k_B
 import Unitful: AbstractQuantity
 
 
+# helper functions
+include("helper.jl")
+
 # generate constants from package `Corpuscles.jl`
 include("corpuscles.jl")
 
@@ -21,6 +24,10 @@ include("references.jl")
 # sub-module containing the constants
 include("constants.jl")
 
+# reexport sub-module for convenience
 @reexport using .Constants
+for constant in names(Constants)
+	@eval export $constant
+end
 
 end # module 
