@@ -35,9 +35,34 @@
 	θ_W, 
 	"Weinberg angle", 
 	28.172,
-	BigFloat(28.172), 
+	BigFloat(28_172) / BigFloat(1_000), 
 	u"°",
 	0.021,
-	BigFloat(0.021),
+	BigFloat(21) / BigFloat(1000),
 	"CODATA 2018"
 	)
+
+@constant(StrongFineStructureConstant, 
+	α_s, 
+	"strong force coupling constant", 
+	0.1183,
+	BigFloat(1183) / BigFloat(10_000), 
+	u"J / J",
+	0.0009,
+	BigFloat(9) / BigFloat(10_000),
+	"ATLAS 2023"
+	)
+
+@constant(GravitationalFineStructureConstant, 
+	α_G, 
+	"gravitational interaction fine-structure constant", 
+	5.906_149_413_805_093_953e-39,
+	BigFloat(5.906_149_413_805_093_953e-39), 
+	u"J / J",
+	0.,
+	BigFloat(0),
+	"?"
+	)
+
+const ElectromagneticFineStructureConstant = FineStructureConstant
+const α_em = FineStructureConstant
