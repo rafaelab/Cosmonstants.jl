@@ -1,5 +1,9 @@
 # ----------------------------------------------------------------------------------------------- #
 #
+export fullReference
+
+# ----------------------------------------------------------------------------------------------- #
+#
 # Define strings with the references for the data
 
 
@@ -35,9 +39,16 @@ const _refIAU2009 =
 const _refIAU2015 = 
 	"+ IAU2015 \n" *
 	"  \"IAU 2015 Resolution B3 on Recommended Nominal Conversion Constants for Selected Solar and Planetary Properties\" \n" *
-	"  E. E. Mamajek, \n" *
+	"  E. E. Mamajek et al. \n" *
 	"  https://doi.org/10.48550/arXiv.1510.07674"
 
+const _refATLAS2024 = 
+	"+ ATLAS2024 \n" *
+	"  \"A precise determination of the strong-coupling constant from the recoil of Z bosons with the ATLAS experiment at s√=8 TeV\" \n" *
+	"  ATLAS Collaboration \n" *
+	"  https://doi.org/10.48550/arXiv.2309.12986"
+
+	
 # ----------------------------------------------------------------------------------------------- #
 # 
 @doc """
@@ -49,6 +60,7 @@ const referencesDict = Dict(
 	"IAU1976" => _refIAU1976,
 	"IAU2009" => _refIAU2009,
 	"IAU2015" => _refIAU2015,
+	"ATLAS2024" => _refATLAS2024,
 )
 
 
