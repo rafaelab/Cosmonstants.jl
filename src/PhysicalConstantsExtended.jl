@@ -7,24 +7,20 @@ using Reexport
 @reexport using Unitful
 
 import PhysicalConstants: @constant, @derived_constant
+import PhysicalConstants: PhysicalConstant
 import PhysicalConstants.CODATA2018: c_0, ħ, h, k_B
+import Unitful: AbstractQuantity
 
 
 # generate constants from package `Corpuscles.jl`
 include("corpuscles.jl")
 
-# constants commonly used in high-energy physics
-include("hep.jl")
-
-# constants commonly used in astrophysics
-include("astro.jl")
-
-# further  constants
-include("extended.jl")
-
 # references to the sources from where the data was extracted
 include("references.jl")
 
+# sub-module containing the constants
+include("constants.jl")
 
+@reexport using .Constants
 
 end # module 
