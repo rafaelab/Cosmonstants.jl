@@ -58,7 +58,7 @@ const referencesDict = Dict(
 Get the full reference for a given source of information.
 """
 function fullReference(ref::AbstractString) 
-	return referencesDict[ref]
+	return referencesDict[replace(ref, " " => "")]
 end
 
 
