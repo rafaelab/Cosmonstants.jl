@@ -10,12 +10,12 @@
 @createConstantsForMasses(Particle(6), MassQuarkTop, m_qt, "mass of the top quark")
 @createConstantsForMasses(Particle(13), MassMuon, m_μ, "mass of the muon")
 @createConstantsForMasses(Particle(15), MassTau, m_τ, "mass of the tau")
-@createConstantsForMasses(Particle(23), MassNeutralBosonWeakInteraction, m_Z⁰, "mass of the neutral bosons of the weak interaction (Z⁰)")
-@createConstantsForMasses(Particle(24), MassChargedBosonWeakInteraction, m_W, "mass of the charged bosons of the weak interaction (W⁺ and W⁻")
+@createConstantsForMasses(Particle(23), MassNeutralBosonWeakInteraction, m_Z⁰, "mass of the neutral bosons of the weak interaction [Z⁰]")
+@createConstantsForMasses(Particle(24), MassChargedBosonWeakInteraction, m_W, "mass of the charged bosons of the weak interaction [W⁺ and W⁻]")
 
 # mass of some hadrons
 @createConstantsForMasses(Particle(111), MassNeutralPion, m_π⁰, "mass of the π⁰")
-@createConstantsForMasses(Particle(211), MassChargedPion, m_π, "mass of the π⁺/π⁻")
+@createConstantsForMasses(Particle(211), MassChargedPion, m_π, "mass of the charged pion [π⁺/π⁻]")
 @createConstantsForMasses(Particle(2214), MassDeltaPlus, m_Δ⁺, "mass of the Δ⁺ baryon")
 
 
