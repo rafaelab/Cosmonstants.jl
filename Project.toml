@@ -1,0 +1,11 @@
+name = "PhysicalConstantsExtended"
+uuid = "e0d7c536-3de7-4c2b-9b69-05e39c337d9a"
+authors = ["Rafael Alves Batista <rafaelab@users.noreply.github.com>"]
+version = "0.1.0"
+
+[deps]
+Corpuscles = "e78a0372-c628-4773-9c8d-eb17d149bf93"
+Measurements = "eff96d63-e80a-5855-80a2-b1b0885c5ab7"
+PhysicalConstants = "5ad8b20f-a522-5ce9-bfc9-ddf1d5bda6ab"
+Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
