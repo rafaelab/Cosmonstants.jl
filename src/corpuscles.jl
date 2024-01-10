@@ -61,6 +61,8 @@ macro createConstantsForMasses(particle, name, symbol, info)
 			convert(BigFloat, $(esc(getCorpusclesParticleMassUncertainty))($(esc(particle)))),
 			"PDG 2022 (from Corpuscles.jl)"
 		)
+
+		export $name
 	end
 end
 
