@@ -13,7 +13,7 @@ Unlike `PhysicalConstants.jl`, I disregard the distinction between `@constant` a
 The data used come from various sources.
 You can get the full reference and link to the original sources by doing:
 ```
-fullReference(constant)
+fullReference(shortRef)
 ```
 
 ### Main features
