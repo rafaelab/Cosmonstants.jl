@@ -19,6 +19,9 @@ include("hep.jl")
 # constants commonly used in astrophysics
 include("astro.jl")
 
+# further  constants
+include("extended.jl")
+
 # references to the sources from where the data was extracted
 include("references.jl")
 
