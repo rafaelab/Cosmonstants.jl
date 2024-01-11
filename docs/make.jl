@@ -6,8 +6,8 @@ using PhysicalConstantsExtended.Constants
 DocMeta.setdocmeta!(PhysicalConstantsExtended, :DocTestSetup, :(using PhysicalConstantsExtended))
 
 # remove items that are not constants to create table of constants
-listOfConstants = names(PhysicalConstantsExtended.Constants)
-deleteat!(listOfConstants, findall(x -> x ∈ (:CODATA2018, :Constants), listOfConstants))
+listOfConstants = getListOfConstants()
+
 
 # generate list of constants (including the reexported ones from PhysicalConstants.jl (CODATA2018))
 open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
