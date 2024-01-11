@@ -26,3 +26,17 @@ end
 
 # ----------------------------------------------------------------------------------------------- #
 #
+@doc """
+Get list of constants.
+This is useful to remove items that are not constants to create table of constants.
+"""
+function getListOfConstants()
+	listOfConstants = names(PhysicalConstantsExtended.Constants)
+
+	listOfNotConstants = (:Main, :PhysicalConstantsExtended, :Constants, :CODATA2018)
+	deleteat!(listOfConstants, findall(x -> x ∈ listOfNotConstants, listOfConstants))
+
+	return listOfConstants
+end
+
+# ----------------------------------------------------------------------------------------------- #
