@@ -3,12 +3,12 @@ module PhysicalConstantsExtended
 using Corpuscles
 using Reexport
 @reexport using Measurements
-@reexport using PhysicalConstants.CODATA2018
+@reexport using PhysicalConstants
 @reexport using Unitful
+@reexport using PhysicalConstants.CODATA2018
 
 import PhysicalConstants: @constant, @derived_constant
 import PhysicalConstants: PhysicalConstant
-import PhysicalConstants.CODATA2018: c_0, ħ, h, k_B
 import Unitful: AbstractQuantity
 
 
@@ -25,8 +25,17 @@ include("references.jl")
 include("constants.jl")
 
 
-# reexport sub-module for convenience
-# also ensure that all symbols are correctly exported
+# reexport CODATA2018 from PhysicalConstants.jl
+#   import list of constants of `PhysicalConstants.jl` and reexport
+listOfConstantsCODATA = names(PhysicalConstants.CODATA2018)
+deleteat!(listOfConstantsCODATA, findall(x -> x == :CODATA2018, listOfConstantsCODATA))
+for constant in listOfConstantsCODATA
+	v = String(correspondingSymbol(constant))
+	@eval import PhysicalConstants.CODATA2018.($(Symbol(v)))
+end
+
+
+# reexport Constants sub-module for convenience
 @reexport using .Constants
 for constant in getListOfConstants()
 	@eval export $(constant)
