@@ -1,0 +1,1 @@
+__precompile__(true)
