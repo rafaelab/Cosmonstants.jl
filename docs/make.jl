@@ -1,9 +1,10 @@
 using Documenter
 using Unitful
 using PhysicalConstantsExtended
-using PhysicalConstantsExtended.Constants
+
 
 DocMeta.setdocmeta!(PhysicalConstantsExtended, :DocTestSetup, :(using PhysicalConstantsExtended))
+
 
 # remove items that are not constants to create table of constants
 listOfConstants = getListOfConstants()
@@ -30,7 +31,6 @@ open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
 	println(io, "| --------- | ----- | ----- | ---- |")
 
 	for constant in listOfConstants
-		println(constant)
 		sym = correspondingSymbol(constant)
 		c = @eval float($constant)
 		println(io, "| `", constant, "` | `", sym, "` | ", ustrip(float(c)), " | ", unit(c) == Unitful.NoUnits ? "" : "`$(unit(c))`", " |")
