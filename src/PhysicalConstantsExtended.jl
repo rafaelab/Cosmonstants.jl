@@ -24,10 +24,13 @@ include("references.jl")
 # sub-module containing the constants
 include("constants.jl")
 
+
 # reexport sub-module for convenience
+# also ensure that all symbols are correctly exported
 @reexport using .Constants
-for constant in names(Constants)
-	@eval export $constant
+for constant in getListOfConstants()
+	@eval export $(constant)
 end
+
 
 end # module 
