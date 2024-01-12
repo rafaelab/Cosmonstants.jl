@@ -34,7 +34,7 @@ Get list of constants.
 This is useful to remove items that are not constants to create table of constants.
 """
 function getListOfConstants()
-	listOfConstants = names(PhysicalConstantsExtended.Constants)
+	listOfConstants = vcat(names(PhysicalConstantsExtended.Constants), names(PhysicalConstants.CODATA2018))
 
 	listOfNotConstants = (:Main, :PhysicalConstantsExtended, :Constants, :CODATA2018)
 	deleteat!(listOfConstants, findall(x -> x ∈ listOfNotConstants, listOfConstants))
