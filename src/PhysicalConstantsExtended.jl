@@ -38,6 +38,9 @@ end
 # reexport Constants sub-module for convenience
 @reexport using .Constants
 for constant in getListOfConstants()
+	v = String(correspondingSymbol(constant))
+	@eval import PhysicalConstantsExtended.Constants.($(Symbol(v)))
+
 	@eval export $(constant)
 end
 
