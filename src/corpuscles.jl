@@ -1,3 +1,5 @@
+import PhysicalConstants.CODATA2018: c_0
+
 # ----------------------------------------------------------------------------------------------- #
 # 
 @doc """
@@ -9,7 +11,7 @@ Helper function (unexported) to get the mass value of a particle in kg.
 # Output
 . Particle mass (without explicit units) in kg.\\
 """
-getCorpusclesParticleMassValue(p) = ustrip(p.mass.value |> u"J / c^2")
+getCorpusclesParticleMassValue(p) = ustrip((p.mass.value |> u"J / c^2") / c_0 ^ 2)
 
 
 # ----------------------------------------------------------------------------------------------- #
@@ -27,10 +29,10 @@ This is done to be fully consistent with `PhysicalConstants.jl`, which uses the 
 """
 function getCorpusclesParticleMassUncertainty(p)
 	if p.mass.lower_limit == p.mass.upper_limit
-		return ustrip(p.mass.lower_limit |> u"J / c^2")
+		return ustrip((p.mass.lower_limit |> u"J / c^2") / c_0 ^ 2)
 	else
 		# @warn "Particle mass errors are not symmetric. The largest one will be chosen."
-		return max(ustrip(p.mass.lower_limit |> u"J / c^2"), ustrip(p.mass.upper_limit |> u"J / c^2"))
+		return max(ustrip((p.mass.lower_limit |> u"J / c^2") / c_0 ^ 2), ustrip((p.mass.upper_limit |> u"J / c^2") / c_0 ^ 2))
 	end
 end
 
