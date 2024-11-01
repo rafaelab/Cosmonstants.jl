@@ -40,7 +40,6 @@ end
 for constant in getListOfConstants()
 	v = String(correspondingSymbol(constant))
 	@eval import PhysicalConstantsExtended.Constants.($(Symbol(v)))
-
 	@eval export $(constant)
 end
 
