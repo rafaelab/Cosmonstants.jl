@@ -41,8 +41,17 @@ function correspondingSymbol(v)
 	out = @captureShowOutput(v)[2]
 	s = split(out, "\n")[1]
 
+
 	pattern =  "\\([^)]*\\)"
-	r = match(Regex(pattern), s).match
+	s = match(Regex(pattern), s)
+
+	if isnothing(s)
+		@warn "There was a problem getting the symbol corresponding to the constant $v ."
+		return nothing
+	end
+
+
+	r = s.match
 	r = replace(r, "(" => "")
 	r = replace(r, ")" => "")
 
