@@ -26,13 +26,13 @@ include("references.jl")
 include("constants.jl")
 
 
-# reexport CODATA2018 from PhysicalConstants.jl
+# reexport CODATA2022 from PhysicalConstants.jl
 #   import list of constants of `PhysicalConstants.jl` and reexport
 listOfConstantsCODATA = names(PhysicalConstants.CODATA2018)
 deleteat!(listOfConstantsCODATA, findall(x -> x == :CODATA2022, listOfConstantsCODATA))
 for constant in listOfConstantsCODATA
 	v = String(correspondingSymbol(constant))
-	@eval import PhysicalConstants.CODATA2018.($(Symbol(v)))
+	@eval import PhysicalConstants.CODATA2022.($(Symbol(v)))
 end
 
 
