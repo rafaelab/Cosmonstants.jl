@@ -10,7 +10,7 @@ DocMeta.setdocmeta!(PhysicalConstantsExtended, :DocTestSetup, :(using PhysicalCo
 listOfConstants = getListOfConstants()
 
 
-# generate list of constants (including the reexported ones from PhysicalConstants.jl (CODATA2018))
+# generate list of constants (including the reexported ones from PhysicalConstants.jl (CODATA))
 open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
     print(io, 
 		"""
@@ -23,23 +23,24 @@ open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
 		Users can to import the short names of the variables they
 		use most frequently, as shown in the examples above.
 		"""
-	)
+		)
 
 	println(io)
 	println(io)
 	println(io, "| Long name | Short | Value | Unit |")
 	println(io, "| --------- | ----- | ----- | ---- |")
 
-	for constant in listOfConstants
-		sym = correspondingSymbol(constant)
-		c = @eval float($constant)
-		println(io, "| `", constant, "` | `", sym, "` | ", ustrip(float(c)), " | ", unit(c) == Unitful.NoUnits ? "" : "`$(unit(c))`", " |")
+	for constant ∈ listOfConstants
+		sym = @eval correspondingSymbol($constant)
+		u = @eval unit($constant)
+		u == Unitful.NoUnits ? "" : "`$(u)`"
+		v = @eval $constant.val
+		println(io, "| `", constant, "` | `", sym, "` | ", v, " | ", u, " |")
 	end
 end
 
 
-
-makedocs(
+makedocs(;
 	sitename = "PhysicalConstantsExtended.jl",
 	format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true"),
 	modules = [PhysicalConstantsExtended],
@@ -48,6 +49,10 @@ makedocs(
 		"Home" => "index.md",
 		"List of constants" => "listOfConstants.md",
 	]
-)
+	)
 
-deploydocs(repo = "github.com/rafaelab/PhysicalConstantsExtended.jl.git", versions = nothing)
+deploydocs(;
+	repo = "github.com/rafaelab/PhysicalConstantsExtended.jl.git", 
+	branch = "gh-pages",
+	versions = nothing
+	)
