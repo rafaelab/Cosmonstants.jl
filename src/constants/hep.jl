@@ -21,27 +21,33 @@
 
 # ----------------------------------------------------------------------------------------------- #
 # 
-@constant(ReducedFermiCouplingConstant, 
-	G_F0, 
-	"reduced Fermi coupling constant", 
-	4.543_7957e14,
-	BigFloat(454_379_570_000_000), 
-	u"J ^ (-2)",
-	2.317_335_807e8,
-	BigFloat(2_317_335_807) / BigFloat(10),
-	"CODATA 2018"
-	)
+# @constant(ReducedFermiCouplingConstant, 
+# 	G_F0, 
+# 	"reduced Fermi coupling constant", 
+# 	454_379_570_000_000.0,
+# 	BigFloat(454_379_570_000_000.0), 
+# 	u"1 / J ^ 2",
+# 	3_744_897.5770,
+# 	BigFloat(3_744_8975770) / BigFloat(10000),
+# 	"CODATA 2022"
+# 	)
 
-@constant(FermiCouplingConstant,
-	G_F,
-	"Fermi coupling constant",
-	1.435_851_043_785_878e-62,
-	ustrip(big(G_F0) * big(c_0) ^ 3 * big(ħ) ^ 3),
-	u"J * m ^ 3",
-	7.322_840_323_307_9782e-69,
-	BigFloat(7.322_840_323_307_9782e-69),
-	"CODATA 2018"
-	)
+
+# @derived_constant(FermiCouplingConstant,
+# 	G_F,
+# 	"Fermi coupling constant",
+# 	convert(Float64, ustrip(big(G_F0) * (big(c_0) * big(ħ)) ^ 3)),
+# 	ustrip(big(G_F0) * (big(c_0) * big(ħ)) ^ 3), 
+# 	u"1 / J ^ 2",
+# 	measurement(G_F0) * (measurement(c_0) * measurement(ħ)) ^ 3,
+# 	measurement(BigFloat, G_F0) * (measurement(BigFloat, c_0) * measurement(BigFloat, ħ)) ^ 3,
+# 	"CODATA 2022"
+# 	)
+
+# 	# PhysicalConstants.@derived_constant(MyDerivedConstant, mdc, "A custom derived constant",
+# 	# 96.252, ustrip(big(mc)) * BigFloat(78) / BigFloat(10), u"m/s",
+# 	# measurement(mc) * 7.8, measurement(BigFloat, mc)  * BigFloat(78) / BigFloat(10),
+# 	# "My lab notebook")
 
 @constant(SinWeinbergAngleSquared, 
 	sinθW2, 
