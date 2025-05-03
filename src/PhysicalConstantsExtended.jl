@@ -5,11 +5,12 @@ using Reexport
 @reexport using Measurements
 @reexport using PhysicalConstants
 @reexport using Unitful
-@reexport using PhysicalConstants.CODATA2018
+@reexport using PhysicalConstants.CODATA2022
 
 import PhysicalConstants: @constant, @derived_constant
 import PhysicalConstants: PhysicalConstant
 import Unitful: AbstractQuantity
+
 
 
 # helper functions
@@ -28,7 +29,7 @@ include("constants.jl")
 # reexport CODATA2018 from PhysicalConstants.jl
 #   import list of constants of `PhysicalConstants.jl` and reexport
 listOfConstantsCODATA = names(PhysicalConstants.CODATA2018)
-deleteat!(listOfConstantsCODATA, findall(x -> x == :CODATA2018, listOfConstantsCODATA))
+deleteat!(listOfConstantsCODATA, findall(x -> x == :CODATA2022, listOfConstantsCODATA))
 for constant in listOfConstantsCODATA
 	v = String(correspondingSymbol(constant))
 	@eval import PhysicalConstants.CODATA2018.($(Symbol(v)))
