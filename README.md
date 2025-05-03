@@ -1,5 +1,12 @@
 # PhysicalConstantsExtended.jl
 
+
+[![Build Status](https://github.com/rafaelab/PhysicalConstantsExtended.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/rafaelab/PhysicalConstantsExtended.jl/actions)
+[![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://rafaelab.github.io/PhysicalConstantsExtended.jl/index.html)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+
+
 This package is an extension of the package `PhysicalConstants.jl` to include more constants and things useful for my own work.
 It is not meant to be complete.
 
@@ -26,6 +33,17 @@ Relative standard uncertainty = 3.5e-5
 Reference                     = IAU1976
 ```
 Note that this is exactly the same format as in `PhysicalConstants.jl`.
+
+A very nice functionality is the implementation of two modules reexporting all constants.
+`Unitfull` and `Unitless` are such modules. The former is redundant with respect to `PhysicalConstants.jl`.
+However, with these two modules it is now possible to more easily dispatch on optional unit systems.
+```
+U = PhysicalConstantsExtended.Unitfull
+println(U.SolarMass) # same as above
+
+V = PhysicalConstantsExtended.Unitless
+println(U.SolarMass) # prints a Float64  1.98847e30
+```
 
 
 ### References
