@@ -28,20 +28,18 @@ include("constants.jl")
 
 # reexport CODATA2022 from PhysicalConstants.jl
 #   import list of constants of `PhysicalConstants.jl` and reexport
-listOfConstantsCODATA = names(PhysicalConstants.CODATA2018)
+listOfConstantsCODATA = names(PhysicalConstants.CODATA2022)
 deleteat!(listOfConstantsCODATA, findall(x -> x == :CODATA2022, listOfConstantsCODATA))
-for constant in listOfConstantsCODATA
-	v = String(correspondingSymbol(constant))
-	@eval import PhysicalConstants.CODATA2022.($(Symbol(v)))
+for constant ∈ listOfConstantsCODATA
+	@eval import PhysicalConstants.CODATA2022.$(constant)
 end
-
 
 # reexport Constants sub-module for convenience
 @reexport using .Constants
-for constant in getListOfConstants()
-	v = String(correspondingSymbol(constant))
-	@eval import PhysicalConstantsExtended.Constants.($(Symbol(v)))
-	@eval export $(constant)
+for constant ∈ getListOfConstants()
+	@eval v = correspondingSymbol($constant)
+	@eval const $v = $constant
+	@eval export $constant
 end
 
 
