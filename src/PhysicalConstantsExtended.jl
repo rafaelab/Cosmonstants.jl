@@ -13,17 +13,11 @@ import Unitful: AbstractQuantity
 
 
 
-# helper functions
 include("helper.jl")
-
-# generate constants from package `Corpuscles.jl`
 include("corpuscles.jl")
-
-# references to the sources from where the data was extracted
 include("references.jl")
-
-# sub-module containing the constants
 include("constants.jl")
+include("toggler.jl")
 
 
 # reexport CODATA2022 from PhysicalConstants.jl
