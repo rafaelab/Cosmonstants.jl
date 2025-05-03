@@ -4,15 +4,42 @@ export
 	correspondingSymbol,
 	getListOfConstants
 
+
+
+# ----------------------------------------------------------------------------------------------- #
+#
+@doc """
+	@captureShowOutput(ex)
+
+A macro that captures the output of evaluating an expression `ex` and returns a tuple containing the result of the evaluation and a string representation of the output.
+
+# Input
+. `ex`: the expression to be evaluated  (e.g., a constant or a mathematical expression).
+
+# Output
+A tuple `(val, output_string)` where:\\
+. `val` is the result of evaluating the expression `ex` \\
+. `output_string` is a string containing the expression, its result, and its textual representation \\
+"""
+macro captureShowOutput(ex)
+	return quote
+		io = IOBuffer()
+		val = $(esc(ex))
+		print(io, $(string(ex)), " = ")
+		show(io, MIME"text/plain"(), val)
+		println(io)
+		(val, String(take!(io)))
+	end
+end
+
 # ----------------------------------------------------------------------------------------------- #
 #
 @doc """
 Given a constant, return its short name.
 """
 function correspondingSymbol(v)
-	buffer = IOBuffer()
-	@eval print($buffer, $v)
-	s = String(take!(buffer))
+	out = @captureShowOutput(v)[2]
+	s = split(out, "\n")[1]
 
 	pattern =  "\\([^)]*\\)"
 	r = match(Regex(pattern), s).match
@@ -25,6 +52,7 @@ function correspondingSymbol(v)
 
 	return Symbol(r)
 end
+
 
 
 # ----------------------------------------------------------------------------------------------- #
