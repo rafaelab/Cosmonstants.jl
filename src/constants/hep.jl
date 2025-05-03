@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------------------------- #
 # 
-
 # mass of fundamental particles
+# @createConstantsForMasses(Particle(1), :MassQuarkDown, :m_qd, "mass of the down quark")
 # @createConstantsForMasses(Particle(1), MassQuarkDown, m_qd, "mass of the down quark")
 # @createConstantsForMasses(Particle(2), MassQuarkUp, m_qu, "mass of the up quark")
 # @createConstantsForMasses(Particle(3), MassQuarkStrange, m_qs, "mass of the strange quark")
@@ -21,56 +21,58 @@
 
 # ----------------------------------------------------------------------------------------------- #
 # 
-# @constant(ReducedFermiCouplingConstant, 
-# 	G_F0, 
-# 	"reduced Fermi coupling constant", 
-# 	454_379_570_000_000.0,
-# 	BigFloat(454_379_570_000_000.0), 
-# 	u"1 / J ^ 2",
-# 	3_744_897.5770,
-# 	BigFloat(3_744_8975770) / BigFloat(10000),
-# 	"CODATA 2022"
-# 	)
+@constant(ReducedFermiCouplingConstant, 
+	G_F0, 
+	"reduced Fermi coupling constant", 
+	4.5437957e14,
+	BigFloat(454_379_570_000_000), 
+	u"1 / J ^ 2",
+	3.744897577e8,
+	BigFloat(37_448_975_770) / BigFloat(100),
+	"CODATA 2022"
+	)
 
+@derived_constant(FermiCouplingConstant,
+	G_F,
+	"Fermi coupling constant",
+	convert(Float64, ustrip(big(G_F0) * big(ħc))),
+	convert(BigFloat, ustrip(big(G_F0) * big(ħc))), 
+	u"J^(-2)",
+	measurement(G_F0) * measurement(ħc),
+	measurement(BigFloat, G_F0) * measurement(BigFloat, ħc),
+	"definition"
+	)
 
-# @derived_constant(FermiCouplingConstant,
-# 	G_F,
-# 	"Fermi coupling constant",
-# 	convert(Float64, ustrip(big(G_F0) * (big(c_0) * big(ħ)) ^ 3)),
-# 	ustrip(big(G_F0) * (big(c_0) * big(ħ)) ^ 3), 
-# 	u"1 / J ^ 2",
-# 	measurement(G_F0) * (measurement(c_0) * measurement(ħ)) ^ 3,
-# 	measurement(BigFloat, G_F0) * (measurement(BigFloat, c_0) * measurement(BigFloat, ħ)) ^ 3,
-# 	"CODATA 2022"
-# 	)
-
-# 	# PhysicalConstants.@derived_constant(MyDerivedConstant, mdc, "A custom derived constant",
-# 	# 96.252, ustrip(big(mc)) * BigFloat(78) / BigFloat(10), u"m/s",
-# 	# measurement(mc) * 7.8, measurement(BigFloat, mc)  * BigFloat(78) / BigFloat(10),
-# 	# "My lab notebook")
-
+# ----------------------------------------------------------------------------------------------- #
+# 
 @constant(SinWeinbergAngleSquared, 
-	sinθW2, 
+	sinθW², 
 	"sine of the Weinberg Angle squared", 
 	0.22290,
-	BigFloat(0.22290), 
-	u"°",
+	BigFloat(22290) / BigFloat(100_000), 
+	Unitful.NoUnits,
 	0.00030,
-	BigFloat(0.00030),
+	BigFloat(30) / BigFloat(100_000),
 	"CODATA 2018"
 	)
 
-@constant(WeinbergAngle, 
+_θ_W(sθ2) = asin(sqrt(sθ2))
+_Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
+
+@derived_constant(WeinbergAngle, 
 	θ_W, 
 	"Weinberg angle", 
-	28.172,
-	BigFloat(28_172) / BigFloat(1_000), 
-	u"°",
-	0.021,
-	BigFloat(21) / BigFloat(1000),
+	convert(Float64, ustrip(_θ_W(sinθW²))),
+	ustrip(_θ_W(big(sinθW²))),
+	Unitful.NoUnits,
+	measurement(Float64(_θ_W(value(big(sinθW²)))), Float64(_Δθ_W(value(big(sinθW²)), uncertainty(big(sinθW²))))),
+	measurement(_θ_W(value(big(sinθW²))), _Δθ_W(value(big(sinθW²)), uncertainty(big(sinθW²)))),
 	"CODATA 2018"
 	)
 
+
+# ----------------------------------------------------------------------------------------------- #
+# 
 @constant(StrongFineStructureConstant, 
 	α_s, 
 	"strong force coupling constant", 
