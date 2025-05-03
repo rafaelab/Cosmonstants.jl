@@ -29,7 +29,7 @@
 	u"1 / J ^ 2",
 	3.744897577e8,
 	BigFloat(37_448_975_770) / BigFloat(100),
-	"CODATA 2022"
+	"CODATA2022"
 	)
 
 @derived_constant(FermiCouplingConstant,
@@ -53,7 +53,7 @@
 	Unitful.NoUnits,
 	0.00030,
 	BigFloat(30) / BigFloat(100_000),
-	"CODATA 2018"
+	"CODATA2018"
 	)
 
 _θ_W(sθ2) = asin(sqrt(sθ2))
@@ -67,7 +67,7 @@ _Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
 	Unitful.NoUnits,
 	measurement(Float64(_θ_W(value(big(sinθW²)))), Float64(_Δθ_W(value(big(sinθW²)), uncertainty(big(sinθW²))))),
 	measurement(_θ_W(value(big(sinθW²))), _Δθ_W(value(big(sinθW²)), uncertainty(big(sinθW²)))),
-	"CODATA 2018"
+	"CODATA2018"
 	)
 
 
@@ -78,10 +78,10 @@ _Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
 	"strong force coupling constant", 
 	0.1183,
 	BigFloat(1183) / BigFloat(10_000), 
-	u"J / J",
+	Unitful.NoUnits,
 	0.0009,
 	BigFloat(9) / BigFloat(10_000),
-	"ATLAS 2023"
+	"ATLAS2024"
 	)
 
 @constant(GravitationalFineStructureConstant, 
@@ -89,7 +89,7 @@ _Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
 	"gravitational interaction fine-structure constant", 
 	5.906_149_413_805_093_953e-39,
 	BigFloat(5.906_149_413_805_093_953e-39), 
-	u"J / J",
+	Unitful.NoUnits,
 	0.,
 	BigFloat(0),
 	"?"

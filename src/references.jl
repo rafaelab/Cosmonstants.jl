@@ -68,6 +68,8 @@ const referencesDict = Dict(
 	"IAU2009" => _refIAU2009,
 	"IAU2015" => _refIAU2015,
 	"ATLAS2024" => _refATLAS2024,
+	"definition" => "by definition",
+	"?" => "unknown reference",
 	)
 
 
