@@ -34,6 +34,8 @@ function getCorpusclesParticleMassUncertainty(p)
 	end
 end
 
+
+
 # ----------------------------------------------------------------------------------------------- #
 # 
 @doc """
@@ -60,8 +62,7 @@ macro createConstantsForMasses(particle, name, symbol, info)
 			$(esc(getCorpusclesParticleMassUncertainty))($(esc(particle))),
 			convert(BigFloat, $(esc(getCorpusclesParticleMassUncertainty))($(esc(particle)))),
 			"PDG 2022 (from Corpuscles.jl)"
-		)
-
+			)
 		export $name
 	end
 end
