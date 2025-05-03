@@ -8,9 +8,9 @@ export DiracConstant
 
 # ----------------------------------------------------------------------------------------------- #
 #
-@derived_constant(PlanckConstantTimesSpeedOfLight,
+@derived_constant(DiracConstantTimesSpeedOfLight,
 	ħc, 
-	"Planck constant times speed of light",
+	"Dirac constant times speed of light",
 	convert(Float64, ustrip(big(ħ) * big(c_0))),
 	ustrip(big(ħ) * big(c_0)), 
 	u"J * m",
@@ -18,7 +18,6 @@ export DiracConstant
 	measurement(BigFloat, ħ) * measurement(BigFloat, c_0),
 	"definition"
 	)
-
 
 
 # ----------------------------------------------------------------------------------------------- #
