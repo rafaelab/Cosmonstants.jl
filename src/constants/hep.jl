@@ -26,7 +26,7 @@
 	"reduced Fermi coupling constant", 
 	4.5437957e14,
 	BigFloat(454_379_570_000_000), 
-	u"1 / J ^ 2",
+	u"J ^ (-2)",
 	3.744897577e8,
 	BigFloat(37_448_975_770) / BigFloat(100),
 	"CODATA2022"
