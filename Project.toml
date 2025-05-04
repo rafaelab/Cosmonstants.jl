@@ -1,7 +1,7 @@
 name = "Cosmonstants"
 uuid = "e0d7c536-3de7-4c2b-9b69-05e39c337d9a"
 authors = ["Rafael Alves Batista <rafaelab@users.noreply.github.com>"]
-version = "1.0.1"
+version = "1.0.2"
 
 [deps]
 Corpuscles = "e78a0372-c628-4773-9c8d-eb17d149bf93"
