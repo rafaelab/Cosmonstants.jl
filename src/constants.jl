@@ -25,9 +25,8 @@ import PhysicalConstants.CODATA2022:
 import Unitful: 
 	AbstractQuantity
 
-import ..PhysicalConstantsExtended: 
-	@createConstantsForMasses,
-	correspondingSymbol
+import ..@createConstantsForMasses
+import ..correspondingSymbol
 
 
 
