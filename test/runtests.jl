@@ -1,7 +1,7 @@
 using Test
-using PhysicalConstantsExtended
+using Cosmonstants
 
-import PhysicalConstantsExtended: c_0
+import Cosmonstants: c_0
 
 
 include("testPhysicalConstants.jl")
