@@ -21,8 +21,23 @@ module Unitfull
 		@eval import ..Constants.$constant
 		@eval v = correspondingSymbol($constant)
 		@eval const $v = $constant
-		@eval export $constant
 	end
+
+	# since things are module-protected, define more aliases
+	const c = c_0
+	const c² = c * c
+	const c³ = c * c²
+	const c⁴ = c * c³
+	const mₚ = m_p
+	const mₙ = m_n
+	const mₑ = m_e
+	const mₑc² = mₑ * c²
+	const mₑ²c⁴ = mₑc² * mₑc²
+	const mₑc²ˆ² = mₑ²c⁴
+	const σₑ = σ_e 
+	const μ₀ = μ_0
+	const ε₀ = ε_0
+
 end
 
 # ----------------------------------------------------------------------------------------------- #
