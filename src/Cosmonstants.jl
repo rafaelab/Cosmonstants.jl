@@ -21,13 +21,6 @@ include("constants.jl")
 include("toggler.jl")
 
 
-# reexport CODATA2022 from PhysicalConstants.jl
-#   import list of constants of `PhysicalConstants.jl` and reexport
-listOfConstantsCODATA = names(PhysicalConstants.CODATA2022)
-deleteat!(listOfConstantsCODATA, findall(x -> x == :CODATA2022, listOfConstantsCODATA))
-for constant ∈ listOfConstantsCODATA
-	@eval import PhysicalConstants.CODATA2022.$(constant)
-end
 
 # reexport Constants sub-module for convenience
 @reexport using .Constants
