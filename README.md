@@ -12,15 +12,12 @@ It is not meant to be complete.
 
 It has not been thoroughly tested for `BigFloat` due to annoying errors stemming from failing assertions in PhysicalConstants.jl.
 
-Unlike `PhysicalConstants.jl`, I disregard the distinction between `@constant` and `@derived_constant`, since this is completely arbitrarily (all constants could, in principle, be derived from a subset of them, although a few of them are manifestly derived).
-
-Documentation will be added soon.
 
 
 ### Installation
 
 You can install `Cosmonstants.jl` using Julia's built-in package manager.
-It is compatible with Julia 1.4 and higher (although it might work down to Julia 1.0).
+It is compatible with Julia 1.8 and higher (I haven't tested for lower versions).
 
 ### Example
 
@@ -43,6 +40,15 @@ println(U.SolarMass) # same as above
 
 V = Cosmonstants.Unitless
 println(U.SolarMass) # prints a Float64  1.98847e30
+```
+
+This can then be used for dispatching:
+```
+ul = getUnitSystem(Real)
+uf = getUnitSystem(Unitful.AbstractQuantity)
+
+println(ul.SpeedOfLightInVacuum) # returns 2.99792458e8
+println(uf.SpeedOfLightInVacuum) # returns the full information (from PhysicalConstants.jl)
 ```
 
 
