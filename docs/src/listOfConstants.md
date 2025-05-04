@@ -17,7 +17,7 @@ use most frequently, as shown in the examples above.
 | `ElectromagneticFineStructureConstant` | `α` | 0.0072973525643 |  |
 | `FermiCouplingConstant` | `G_F` | 1.4365331758849134e-11 | J⁻² |
 | `GravitationalFineStructureConstant` | `α_G` | 5.906149413805094e-39 |  |
-| `ReducedFermiCouplingConstant` | `G_F0` | 4.5437957e14 | 1 J⁻² |
+| `ReducedFermiCouplingConstant` | `G_F0` | 4.5437957e14 | J⁻² |
 | `SinWeinbergAngleSquared` | `sinθW²` | 0.2229 |  |
 | `SolarMass` | `M☉` | 1.98847e30 | kg |
 | `SolarRadius` | `R☉` | 6.9566e11 | m |
