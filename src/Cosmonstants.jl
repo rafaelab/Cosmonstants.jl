@@ -1,11 +1,12 @@
 module Cosmonstants
 
 using Corpuscles
+using PhysicalConstants
+using PhysicalConstants.CODATA2022
 using Reexport
 @reexport using Measurements
-@reexport using PhysicalConstants
 @reexport using Unitful
-@reexport using PhysicalConstants.CODATA2022
+
 
 import PhysicalConstants: @constant, @derived_constant
 import PhysicalConstants: PhysicalConstant
@@ -33,7 +34,7 @@ end
 for constant ∈ getListOfConstants()
 	@eval v = correspondingSymbol($constant)
 	@eval const $v = $constant
-	@eval export $constant
+	# @eval export $constant
 end
 
 
