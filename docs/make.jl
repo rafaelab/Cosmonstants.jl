@@ -1,9 +1,9 @@
 using Documenter
 using Unitful
-using PhysicalConstantsExtended
+using Cosmonstants
 
 
-DocMeta.setdocmeta!(PhysicalConstantsExtended, :DocTestSetup, :(using PhysicalConstantsExtended))
+DocMeta.setdocmeta!(Cosmonstants, :DocTestSetup, :(using Cosmonstants))
 
 
 # remove items that are not constants to create table of constants
@@ -41,9 +41,9 @@ end
 
 
 makedocs(;
-	sitename = "PhysicalConstantsExtended.jl",
+	sitename = "Cosmonstants.jl",
 	format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true"),
-	modules = [PhysicalConstantsExtended],
+	modules = [Cosmonstants],
 	# workdir = joinpath(@__DIR__, ".."),
 	pages = [
 		"Home" => "index.md",
@@ -52,7 +52,7 @@ makedocs(;
 	)
 
 deploydocs(;
-	repo = "github.com/rafaelab/PhysicalConstantsExtended.jl.git", 
+	repo = "github.com/rafaelab/Cosmonstants.jl.git", 
 	branch = "gh-pages",
 	versions = nothing
 	)

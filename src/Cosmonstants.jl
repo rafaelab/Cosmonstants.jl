@@ -1,4 +1,4 @@
-module PhysicalConstantsExtended
+module Cosmonstants
 
 using Corpuscles
 using Reexport
