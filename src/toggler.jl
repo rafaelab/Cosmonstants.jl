@@ -47,9 +47,6 @@ module Unitfull
 	const ħcˆ² = ħ²c²
 	const ħcˆ³ = ħ³c³
 	const ħcˆ⁴ = ħ⁴c⁴
-	const hc = h * c
-	const h²c² = hc * h²c²
-	const hcˆ² = h²c²
 	
 end
 
