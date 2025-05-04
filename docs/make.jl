@@ -32,10 +32,10 @@ open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
 	println(io, "| --------- | ----- | ----- | ---- |")
 
 	for constant ∈ listOfConstants
-		sym = @eval correspondingSymbol($constant)
-		u = @eval unit($constant)
+		sym = @eval correspondingSymbol(Constants.$constant)
+		u = @eval unit(Constants.$constant)
 		u == Unitful.NoUnits ? "" : "`$(u)`"
-		v = @eval $constant.val
+		v = @eval Constants.$constant.val
 		println(io, "| `", constant, "` | `", sym, "` | ", v, " | ", u, " |")
 	end
 end
