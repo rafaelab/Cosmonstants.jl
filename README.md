@@ -1,8 +1,8 @@
-# PhysicalConstantsExtended.jl
+# Cosmonstants.jl
 
 
-[![Build Status](https://github.com/rafaelab/PhysicalConstantsExtended.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/rafaelab/PhysicalConstantsExtended.jl/actions)
-[![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://rafaelab.github.io/PhysicalConstantsExtended.jl/index.html)
+[![Build Status](https://github.com/rafaelab/Cosmonstants.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/rafaelab/Cosmonstants.jl/actions)
+[![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://rafaelab.github.io/Cosmonstants.jl/index.html)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 
@@ -19,7 +19,7 @@ Documentation will be added soon.
 
 ### Installation
 
-You can install `PhysicalConstantsExtended.jl` using Julia's built-in package manager.
+You can install `Cosmonstants.jl` using Julia's built-in package manager.
 It is compatible with Julia 1.4 and higher (although it might work down to Julia 1.0).
 
 ### Example
@@ -38,10 +38,10 @@ A very nice functionality is the implementation of two modules reexporting all c
 `Unitfull` and `Unitless` are such modules. The former is redundant with respect to `PhysicalConstants.jl`.
 However, with these two modules it is now possible to more easily dispatch on optional unit systems.
 ```
-U = PhysicalConstantsExtended.Unitfull
+U = Cosmonstants.Unitfull
 println(U.SolarMass) # same as above
 
-V = PhysicalConstantsExtended.Unitless
+V = Cosmonstants.Unitless
 println(U.SolarMass) # prints a Float64  1.98847e30
 ```
 
