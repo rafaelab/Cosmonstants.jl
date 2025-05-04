@@ -1,6 +1,7 @@
 using Documenter
 using Unitful
 using Cosmonstants
+using Cosmonstants.Constants
 
 
 DocMeta.setdocmeta!(Cosmonstants, :DocTestSetup, :(using Cosmonstants))
