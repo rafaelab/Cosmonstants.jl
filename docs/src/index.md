@@ -19,7 +19,7 @@ end
 ```
 
 ```@autodocs
-Modules = [Cosmonstants]
+Modules = [Cosmonstants, Cosmonstants.Unitfull, Cosmonstants.Unitless]
 ```
 
 
