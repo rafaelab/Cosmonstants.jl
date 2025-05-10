@@ -1,22 +1,51 @@
+export
+	ElectromagneticFineStructureConstant,
+	MassQuarkDown,
+	MassQuarkUp,
+	MassQuarkStrange,
+	MassQuarkCharm,
+	MassQuarkBottom,
+	MassQuarkTop,
+	MassMuon,
+	MassTau,
+	MassPhoton,
+	MassNeutralBosonWeakInteraction,
+	MassChargedBosonWeakInteraction,
+	MassHiggsBoson,
+	MassNeutralPion,
+	MassChargedPion,
+	MassDeltaPlus,
+	MassElectron,
+	MassProton,
+	MassNeutron
+
+
 # ----------------------------------------------------------------------------------------------- #
 # 
 # mass of fundamental particles
-# @createConstantsForMasses(Particle(1), :MassQuarkDown, :m_qd, "mass of the down quark")
-# @createConstantsForMasses(Particle(1), MassQuarkDown, m_qd, "mass of the down quark")
-# @createConstantsForMasses(Particle(2), MassQuarkUp, m_qu, "mass of the up quark")
-# @createConstantsForMasses(Particle(3), MassQuarkStrange, m_qs, "mass of the strange quark")
-# @createConstantsForMasses(Particle(4), MassQuarkCharm, m_qc, "mass of the charm quark")
-# @createConstantsForMasses(Particle(5), MassQuarkBottom, m_qb, "mass of the bottom quark")
-# @createConstantsForMasses(Particle(6), MassQuarkTop, m_qt, "mass of the top quark")
-# @createConstantsForMasses(Particle(13), MassMuon, m_μ, "mass of the muon")
-# @createConstantsForMasses(Particle(15), MassTau, m_τ, "mass of the tau")
-# @createConstantsForMasses(Particle(23), MassNeutralBosonWeakInteraction, m_Z⁰, "mass of the neutral bosons of the weak interaction [Z⁰]")
-# @createConstantsForMasses(Particle(24), MassChargedBosonWeakInteraction, m_W, "mass of the charged bosons of the weak interaction [W⁺ and W⁻]")
+@createConstantsForMasses(Particle(1), MassQuarkDown, m_qd, "mass of the down quark")
+@createConstantsForMasses(Particle(2), MassQuarkUp, m_qu, "mass of the up quark")
+@createConstantsForMasses(Particle(3), MassQuarkStrange, m_qs, "mass of the strange quark")
+@createConstantsForMasses(Particle(4), MassQuarkCharm, m_qc, "mass of the charm quark")
+@createConstantsForMasses(Particle(5), MassQuarkBottom, m_qb, "mass of the bottom quark")
+@createConstantsForMasses(Particle(6), MassQuarkTop, m_qt, "mass of the top quark")
+@createConstantsForMasses(Particle(13), MassMuon, m_μ, "mass of the muon")
+@createConstantsForMasses(Particle(15), MassTau, m_τ, "mass of the tau")
+@createConstantsForMasses(Particle(21), MassGluon, m_g, "mass of the gluon")
+@createConstantsForMasses(Particle(22), MassPhoton, m_γ, "mass of the photon")
+@createConstantsForMasses(Particle(23), MassNeutralBosonWeakInteraction, m_Z⁰, "mass of the neutral bosons of the weak interaction [Z⁰]")
+@createConstantsForMasses(Particle(24), MassChargedBosonWeakInteraction, m_W, "mass of the charged bosons of the weak interaction [W⁺ and W⁻]")
+@createConstantsForMasses(Particle(25), MassHiggsBoson, m_H, "mass of the Higgs boson")
 
-# # mass of some hadrons
-# @createConstantsForMasses(Particle(111), MassNeutralPion, m_π⁰, "mass of the π⁰")
-# @createConstantsForMasses(Particle(211), MassChargedPion, m_π, "mass of the charged pion [π⁺/π⁻]")
-# @createConstantsForMasses(Particle(2214), MassDeltaPlus, m_Δ⁺, "mass of the Δ⁺ baryon")
+# mass of some hadrons
+@createConstantsForMasses(Particle(111), MassNeutralPion, m_π⁰, "mass of the π⁰")
+@createConstantsForMasses(Particle(211), MassChargedPion, m_πᶜ, "mass of the charged pion [π⁺/π⁻]")
+@createConstantsForMasses(Particle(2214), MassDeltaPlus, m_Δ⁺, "mass of the Δ⁺ baryon")
+
+# redefinitions for consistency
+const MassElectron = ElectronMass
+const MassProton = ProtonMass
+const MassNeutron = NeutronMass
 
 
 # ----------------------------------------------------------------------------------------------- #
@@ -96,8 +125,6 @@ _Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
 	)
 
 const ElectromagneticFineStructureConstant = FineStructureConstant
-export ElectromagneticFineStructureConstant
-
 const α_em = FineStructureConstant
 
 
