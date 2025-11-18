@@ -17,7 +17,15 @@ export
 	MassDeltaPlus,
 	MassElectron,
 	MassProton,
-	MassNeutron
+	MassNeutron,
+	PlanckMass,
+	PlanckEnergy,
+	PlanckLength,
+	PlanckTime,
+	FermiCouplingConstant,
+	WeinbergAngle,
+	StrongFineStructureConstant,
+	GravitationalFineStructureConstant
 
 
 # ----------------------------------------------------------------------------------------------- #
@@ -50,6 +58,54 @@ const MassNeutron = NeutronMass
 
 # ----------------------------------------------------------------------------------------------- #
 # 
+@derived_constant(PlanckMass,
+	m_Pl,
+	"Planck mass",
+	convert(Float64, ustrip(sqrt(big(ħc) / big(G)))),
+	convert(BigFloat, ustrip(sqrt(big(ħc) / big(G)))),
+	u"kg",
+	sqrt(measurement(ħc) / measurement(G)),
+	sqrt(measurement(BigFloat, ħc) / measurement(BigFloat, G)),
+	"definition"
+)
+
+@derived_constant(PlanckEnergy,
+	E_Pl,
+	"Planck energy",
+	convert(Float64, ustrip(sqrt(big(m_Pl) * big(c_0) ^ 2 / big(G)))),
+	convert(BigFloat, ustrip(sqrt(big(m_Pl) * big(c_0) ^ 2 / big(G)))),
+	u"J",
+	sqrt(measurement(m_Pl) * measurement(c_0) ^ 2 / measurement(G)),
+	sqrt(measurement(BigFloat, m_Pl) * measurement(BigFloat, c_0) ^ 2 / measurement(BigFloat, G)),
+	"definition"
+)
+
+@derived_constant(PlanckLength,
+	ℓ_Pl,
+	"Planck length",
+	convert(Float64, ustrip( sqrt( big(ħ) * big(G) / big(c_0) ^ 3))),
+	convert(BigFloat, ustrip( sqrt( big(ħ) * big(G) / big(c_0) ^ 3))),
+	u"m",
+	sqrt(measurement(ħ) * measurement(G) / measurement(c_0) ^ 3),
+	sqrt(measurement(BigFloat, ħ) * measurement(BigFloat, G) / measurement(BigFloat, c_0) ^ 3),
+	"definition"
+)
+
+@derived_constant(PlanckTime,
+	t_Pl,
+	"Planck time",
+	convert(Float64,
+	ustrip(sqrt(big(ħ) * big(G) / big(c_0) ^ 5))),
+	convert(BigFloat, ustrip( sqrt( big(ħ) * big(G) / big(c_0) ^ 5))),
+	u"s",
+	sqrt(measurement(ħ) * measurement(G) / measurement(c_0) ^ 5),
+	sqrt(measurement(BigFloat, ħ) * measurement(BigFloat, G) / measurement(BigFloat, c_0) ^ 5),
+	"definition"
+)
+
+
+# ----------------------------------------------------------------------------------------------- #
+# 
 @constant(ReducedFermiCouplingConstant, 
 	G_F0, 
 	"reduced Fermi coupling constant", 
@@ -59,7 +115,7 @@ const MassNeutron = NeutronMass
 	3.744897577e8,
 	BigFloat(37_448_975_770) / BigFloat(100),
 	"CODATA2022"
-	)
+)
 
 @derived_constant(FermiCouplingConstant,
 	G_F,
@@ -70,7 +126,7 @@ const MassNeutron = NeutronMass
 	measurement(G_F0) * measurement(ħc),
 	measurement(BigFloat, G_F0) * measurement(BigFloat, ħc),
 	"definition"
-	)
+)
 
 # ----------------------------------------------------------------------------------------------- #
 # 
@@ -83,21 +139,18 @@ const MassNeutron = NeutronMass
 	0.00030,
 	BigFloat(30) / BigFloat(100_000),
 	"CODATA2018"
-	)
+)
 
-_θ_W(sθ2) = asin(sqrt(sθ2))
-_Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
-
-@derived_constant(WeinbergAngle, 
-	θ_W, 
-	"Weinberg angle", 
-	convert(Float64, ustrip(_θ_W(sinθW²))),
-	ustrip(_θ_W(big(sinθW²))),
+@derived_constant(WeinbergAngle,
+	θ_W,
+	"Weinberg angle",
+	convert(Float64, ustrip(asin(sqrt(big(sinθW²))))),
+	convert(BigFloat, ustrip(asin(sqrt(big(sinθW²))))),
 	Unitful.NoUnits,
-	measurement(Float64(_θ_W(value(big(sinθW²)))), Float64(_Δθ_W(value(big(sinθW²)), uncertainty(big(sinθW²))))),
-	measurement(_θ_W(value(big(sinθW²))), _Δθ_W(value(big(sinθW²)), uncertainty(big(sinθW²)))),
-	"CODATA2018"
-	)
+	asin(sqrt(measurement(Float64(value(big(sinθW²))), Float64(uncertainty(big(sinθW²)))))),
+	asin(sqrt(measurement(value(big(sinθW²)), uncertainty(big(sinθW²))))),
+	"definition"
+)
 
 
 # ----------------------------------------------------------------------------------------------- #
@@ -111,7 +164,7 @@ _Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
 	0.0009,
 	BigFloat(9) / BigFloat(10_000),
 	"ATLAS2024"
-	)
+)
 
 @constant(GravitationalFineStructureConstant, 
 	α_G, 
@@ -121,8 +174,8 @@ _Δθ_W(sθ2, Δsθ2) = 0.5 / sqrt(sθ2 * (1 - sθ2)) * Δsθ2
 	Unitful.NoUnits,
 	0.,
 	BigFloat(0),
-	"?"
-	)
+	"definition"
+)
 
 const ElectromagneticFineStructureConstant = FineStructureConstant
 const α_em = FineStructureConstant
