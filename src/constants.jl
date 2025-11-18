@@ -21,7 +21,8 @@ import PhysicalConstants.CODATA2022:
 	c_0, 
 	ħ, 
 	h, 
-	k_B
+	k_B,
+	G
 
 import Unitful: 
 	AbstractQuantity
