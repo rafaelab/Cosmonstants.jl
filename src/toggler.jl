@@ -37,6 +37,7 @@ It acts as a dispatcher for functions that depend on the unit system.
 @inline getUnitSystem(::Type{<: Unitful.FreeUnits}) = UnitfullSystem
 @inline getUnitSystem(::Type{<: Unitful.Units}) = UnitfullSystem
 @inline getUnitSystem(::Type{T}) where {T} = throw(ArgumentError("Unsupported type for `getUnitSystem`."))
+@inline getUnitSystem(::T) where {T} = getUnitSystem(T)
 
 
 # ----------------------------------------------------------------------------------------------- #
