@@ -24,13 +24,11 @@ open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
 		Users can to import the short names of the variables they
 		use most frequently, as shown in the examples above.
 		"""
-		)
-
+	)
 	println(io)
 	println(io)
 	println(io, "| Long name | Short | Value | Unit |")
 	println(io, "| --------- | ----- | ----- | ---- |")
-
 	for constant ∈ listOfConstants
 		sym = @eval correspondingSymbol(Constants.$constant)
 		u = @eval unit(Constants.$constant)
@@ -50,10 +48,10 @@ makedocs(;
 		"Home" => "index.md",
 		"List of constants" => "listOfConstants.md",
 	]
-	)
+)
 
 deploydocs(;
 	repo = "github.com/rafaelab/Cosmonstants.jl.git", 
 	branch = "gh-pages",
 	versions = nothing
-	)
+)
