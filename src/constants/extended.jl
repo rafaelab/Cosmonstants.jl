@@ -1,13 +1,16 @@
+export 
+	DiracConstant
+
+
 # ----------------------------------------------------------------------------------------------- #
-#
+# 
+
 # Create aliases for some variables
-
 const DiracConstant = ReducedPlanckConstant
-export DiracConstant
 
 
 # ----------------------------------------------------------------------------------------------- #
-#
+# 
 @derived_constant(DiracConstantTimesSpeedOfLight,
 	ħc, 
 	"Dirac constant times speed of light",
@@ -17,7 +20,8 @@ export DiracConstant
 	measurement(ħ) * measurement(c_0),
 	measurement(BigFloat, ħ) * measurement(BigFloat, c_0),
 	"definition"
-	)
+)
+
 
 
 # ----------------------------------------------------------------------------------------------- #

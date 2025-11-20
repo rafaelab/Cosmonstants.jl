@@ -1,3 +1,6 @@
+
+# ----------------------------------------------------------------------------------------------- #
+# 
 @constant(SolarMass,
 	M☉,
 	"mass of the Sun",
@@ -7,7 +10,7 @@
 	0.00007e30,
 	BigFloat(0.00007e30),
 	"IAU1976"
-	)
+)
 
 @constant(EarthMass,
 	M🜨,
@@ -18,8 +21,7 @@
 	0.0006e24,
 	BigFloat(0.0006e24),
 	"IAU2009"
-	)
-
+)
 
 @constant(SolarRadius,
 	R☉,
@@ -30,7 +32,7 @@
 	1.4e5,
 	BigFloat(140000),
 	"IAU2015"
-	)
+)
 
 # uncertainty is the difference between equatorial and polar radii
 @constant(EarthRadius,
@@ -42,4 +44,6 @@
 	21300.,
 	BigFloat(21300),
 	"IAU2015"
-	)
+)
+
+# ----------------------------------------------------------------------------------------------- #

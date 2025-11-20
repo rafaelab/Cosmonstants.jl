@@ -30,7 +30,7 @@ export
 
 # ----------------------------------------------------------------------------------------------- #
 # 
-# mass of fundamental particles
+# mass of fundamental particles (must be exported manually)
 @createConstantsForMasses(Particle(1), MassQuarkDown, m_qd, "mass of the down quark")
 @createConstantsForMasses(Particle(2), MassQuarkUp, m_qu, "mass of the up quark")
 @createConstantsForMasses(Particle(3), MassQuarkStrange, m_qs, "mass of the strange quark")
