@@ -14,29 +14,26 @@ import PhysicalConstants:
 import PhysicalConstants: 
 	PhysicalConstant
 import Unitful: 
-	AbstractQuantity
+	AbstractQuantity,
+	Units
 
 
-# ----------------------------------------------------------------------------------------------- #
-#
+
+include("types.jl")
 include("helper.jl")
 include("corpuscles.jl")
 include("references.jl")
 include("constants.jl")
 include("toggler.jl")
 
-# ----------------------------------------------------------------------------------------------- #
-#
+
 # reexport Constants sub-module for convenience
 @reexport using .Constants
 for constant ∈ getListOfConstants()
 	@eval v = correspondingSymbol($constant)
 	@eval const $v = $constant
-	# @eval export $constant
 end
 
-# ----------------------------------------------------------------------------------------------- #
-#
 
 
 end # module 
