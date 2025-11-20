@@ -54,7 +54,7 @@ macro createConstantsForMasses(particle, name, symbol, info)
 	return quote
 		@eval begin
 			local _m  = $(getCorpusclesParticleMassValue)($particle)
-            local _Δm = $(getCorpusclesParticleMassUncertainty)($particle)
+			local _Δm = $(getCorpusclesParticleMassUncertainty)($particle)
 
 			@constant(
 				$name,
@@ -66,7 +66,7 @@ macro createConstantsForMasses(particle, name, symbol, info)
 				_Δm,
 				convert(BigFloat, _Δm),
 				"PDG 2022 (from Corpuscles.jl)"
-				)
+			)
 
 			const $symbol = $name
 		end
