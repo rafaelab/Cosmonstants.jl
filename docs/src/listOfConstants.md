@@ -49,6 +49,10 @@ use most frequently, as shown in the examples above.
 | `NeutronMass` | `m_n` | 1.67492750056e-27 | kg |
 | `NewtonianConstantOfGravitation` | `G` | 6.6743e-11 | m³ kg⁻¹ s⁻² |
 | `PlanckConstant` | `h` | 6.62607015e-34 | J s |
+| `PlanckEnergy` | `E_Pl` | 5.413655629189003e9 | J |
+| `PlanckLength` | `ℓ_Pl` | 1.6162550244237053e-35 | m |
+| `PlanckMass` | `m_Pl` | 2.1764343427178984e-8 | kg |
+| `PlanckTime` | `t_Pl` | 5.391246448313604e-44 | s |
 | `ProtonMass` | `m_p` | 1.67262192595e-27 | kg |
 | `ReducedFermiCouplingConstant` | `G_F0` | 4.5437957e14 | J⁻² |
 | `ReducedPlanckConstant` | `ħ` | 1.0545718176461565e-34 | J s |
