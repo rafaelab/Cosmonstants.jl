@@ -8,20 +8,25 @@ using Reexport
 @reexport using Unitful
 
 
-import PhysicalConstants: @constant, @derived_constant
-import PhysicalConstants: PhysicalConstant
-import Unitful: AbstractQuantity
+import PhysicalConstants: 
+	@constant, 
+	@derived_constant
+import PhysicalConstants: 
+	PhysicalConstant
+import Unitful: 
+	AbstractQuantity
 
 
-
+# ----------------------------------------------------------------------------------------------- #
+#
 include("helper.jl")
 include("corpuscles.jl")
 include("references.jl")
 include("constants.jl")
 include("toggler.jl")
 
-
-
+# ----------------------------------------------------------------------------------------------- #
+#
 # reexport Constants sub-module for convenience
 @reexport using .Constants
 for constant ∈ getListOfConstants()
@@ -29,6 +34,9 @@ for constant ∈ getListOfConstants()
 	@eval const $v = $constant
 	# @eval export $constant
 end
+
+# ----------------------------------------------------------------------------------------------- #
+#
 
 
 end # module 
