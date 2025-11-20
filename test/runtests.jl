@@ -1,7 +1,11 @@
 using Test
 using Cosmonstants
 
-import Cosmonstants: c_0
+import Cosmonstants: 
+	UnitfullSystem,
+	UnitlessSystem,
+	Unitfull,
+	Unitless
 
 
 include("testPhysicalConstants.jl")
