@@ -31,13 +31,12 @@ Base.getproperty(::UnitfullSystem, s::Symbol) = getproperty(Unitfull, s)
 Returns the unit system module (`Unitfull` or `Unitless`) corresponding to the type `T`.
 It acts as a dispatcher for functions that depend on the unit system.
 """
-@inline getUnitSystem(::Type{<: Real}) = UnitlessSystem
-@inline getUnitSystem(::Type{<: Unitful.Quantity}) = UnitfullSystem
-@inline getUnitSystem(::Type{<: Unitful.AbstractQuantity}) = UnitfullSystem
-@inline getUnitSystem(::Type{<: Unitful.FreeUnits}) = UnitfullSystem
-@inline getUnitSystem(::Type{<: Unitful.Units}) = UnitfullSystem
+@inline getUnitSystem(::Type{<: Real}) = UnitlessSystem()
+@inline getUnitSystem(::Type{<: Unitful.Quantity}) = UnitfullSystem()
+@inline getUnitSystem(::Type{<: Unitful.AbstractQuantity}) = UnitfullSystem()
+@inline getUnitSystem(::Type{<: Unitful.FreeUnits}) = UnitfullSystem()
+@inline getUnitSystem(::Type{<: Unitful.Units}) = UnitfullSystem()
 @inline getUnitSystem(::Type{T}) where {T} = throw(ArgumentError("Unsupported type for `getUnitSystem`."))
-@inline getUnitSystem(::T) where {T} = getUnitSystem(T)
 
 
 # ----------------------------------------------------------------------------------------------- #
