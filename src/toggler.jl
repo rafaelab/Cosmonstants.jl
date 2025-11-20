@@ -1,6 +1,8 @@
 # ----------------------------------------------------------------------------------------------- #
 #
 export 
+	UnitlessSystem,
+	UnitfullSystem,
 	getUnitSystem,
 	getUnitSystemModule
 
@@ -41,7 +43,7 @@ It acts as a dispatcher for functions that depend on the unit system.
 
 # ----------------------------------------------------------------------------------------------- #
 #
-@doc """ ``
+@doc """
 	getUnitSystemModule(::Type{<: AbstractUnitSystem})
 	getUnitSystemModule(::<: AbstractUnitSystem)
 
