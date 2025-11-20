@@ -1,4 +1,4 @@
-@testset "Units and Constants Tests" begin
+@testset "Test unit toggler" begin
 
 	@testset "getUnitSystem from numbers" begin
 		@test getUnitSystem(Float64) == Unitless
