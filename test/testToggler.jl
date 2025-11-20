@@ -1,14 +1,19 @@
 @testset "Units and Constants Tests" begin
 
-	@testset "getUnitSystem (Real)" begin
-		@test getUnitSystem(Float64) == Cosmonstants.Unitless
-		@test getUnitSystem(Int32) == Cosmonstants.Unitless
+	@testset "getUnitSystem from numbers" begin
+		@test getUnitSystem(Float64) == Unitless
+		@test getUnitSystem(Int32) == Unitless
+		@test getUnitSystem(typeof(1 * u"m * A")) == Unitfull
+		@test getUnitSystem(typeof(u"m / kg")) == Unitfull
 	end
 
-	@testset "getUnitSystem (Unitful)" begin
-		@test Cosmonstants.getUnitSystem(typeof(1 * u"m * A")) == Cosmonstants.Unitfull
-		@test Cosmonstants.getUnitSystem(typeof(u"m / kg")) == Cosmonstants.Unitfull
+
+	@testset "unit system dispatch" begin
+		@test getUnitSystem(UnitlessSystem()) == Unitless
+		@test getUnitSystem(UnitfullSystem()) == Unitfull
+		@test getUnitSystem(UnitlessSystem) == Unitless
+		@test getUnitSystem(UnitfullSystem) == Unitfull
+		@test_throws ArgumentError getUnitSystem(String)
 	end
 
-	
 end
