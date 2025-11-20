@@ -1,10 +1,12 @@
 @testset "Test unit toggler" begin
 
-	@testset "getUnitSystem from numbers" begin
-		@test getUnitSystem(Float64) == UnitlessSystem
-		@test getUnitSystem(Int32) == UnitlessSystem
-		@test getUnitSystem(typeof(1 * u"m * A")) == UnitfullSystem
-		@test getUnitSystem(typeof(u"m / kg")) == UnitfullSystem
+	@testset "getUnitSystem from quantities" begin
+		@test getUnitSystem(Float64) isa UnitlessSystem
+		@test getUnitSystem(Int32) isa UnitlessSystem
+		@test getUnitSystem(typeof(1 * u"m * A"))  isa UnitfullSystem
+		@test getUnitSystem(typeof(u"m / kg")) isa UnitfullSystem
+		@test getUnitSystem(u"s") isa UnitfullSystem
+		@test getUnitSystem([1. 2.; 3 4]) isa UnitlessSystem
 	end
 
 
