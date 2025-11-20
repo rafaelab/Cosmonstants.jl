@@ -17,6 +17,10 @@ abstract type AbstractUnitSystem end
 struct UnitlessSystem <: AbstractUnitSystem end
 struct UnitfullSystem <: AbstractUnitSystem end
 
+# provide access to modules via objects
+Base.getproperty(::UnitlessSystem, s::Symbol) = getproperty(Unitless, s)
+Base.getproperty(::UnitfullSystem, s::Symbol) = getproperty(Unitfull, s)
+
 
 # ----------------------------------------------------------------------------------------------- #
 #

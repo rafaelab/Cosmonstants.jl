@@ -15,4 +15,16 @@
 		@test getUnitSystemModule(UnitfullSystem) == Unitfull
 	end
 
+	@testset "test equivalence between property access and direct module access" begin
+		ul = UnitlessSystem()
+		uf = UnitfullSystem()
+
+		@test ul.c == Unitless.c
+		@test ul.h == Unitless.h
+		@test ul.G == Unitless.G
+		@test uf.c == Unitfull.c
+		@test uf.h == Unitfull.h
+		@test uf.G == Unitfull.G
+	end
+
 end
