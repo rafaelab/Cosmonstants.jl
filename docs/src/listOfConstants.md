@@ -26,25 +26,25 @@ use most frequently, as shown in the examples above.
 | `FermiCouplingConstant` | `G_F` | 1.4365331758849134e-11 | J⁻² |
 | `FineStructureConstant` | `α` | 0.0072973525643 |  |
 | `GravitationalFineStructureConstant` | `α_G` | 5.906149413805094e-39 |  |
-| `MassChargedBosonWeakInteraction` | `m_W` | 1.4328858259852877e-25 | kg |
+| `MassChargedBosonWeakInteraction` | `m_W` | 1.432707559793125e-25 | kg |
 | `MassChargedPion` | `m_πᶜ` | 2.4880681963975513e-28 | kg |
 | `MassDeltaPlus` | `m_Δ⁺` | 2.19623948744557e-27 | kg |
 | `MassElectron` | `m_e` | 9.1093837139e-31 | kg |
 | `MassGluon` | `m_g` | 0.0 | kg |
-| `MassHiggsBoson` | `m_H` | 2.232784056838942e-25 | kg |
+| `MassHiggsBoson` | `m_H` | 2.2318927258781276e-25 | kg |
 | `MassMuon` | `m_μ` | 1.8835316270491198e-28 | kg |
-| `MassNeutralBosonWeakInteraction` | `m_Z⁰` | 1.6255666224463608e-25 | kg |
+| `MassNeutralBosonWeakInteraction` | `m_Z⁰` | 1.6255737530940473e-25 | kg |
 | `MassNeutralPion` | `m_π⁰` | 2.406180016631844e-28 | kg |
 | `MassNeutron` | `m_n` | 1.67492750056e-27 | kg |
 | `MassPhoton` | `m_γ` | 0.0 | kg |
 | `MassProton` | `m_p` | 1.67262192595e-27 | kg |
-| `MassQuarkBottom` | `m_qb` | 7.451526832404612e-27 | kg |
-| `MassQuarkCharm` | `m_qc` | 2.2639806404674298e-27 | kg |
-| `MassQuarkDown` | `m_qd` | 8.325031174002282e-30 | kg |
-| `MassQuarkStrange` | `m_qs` | 1.6650062348004567e-28 | kg |
-| `MassQuarkTop` | `m_qt` | 3.0750918148081237e-25 | kg |
+| `MassQuarkBottom` | `m_qb` | 7.456874818169496e-27 | kg |
+| `MassQuarkCharm` | `m_qc` | 2.2693286262323135e-27 | kg |
+| `MassQuarkDown` | `m_qd` | 8.37851103165112e-30 | kg |
+| `MassQuarkStrange` | `m_qs` | 1.6667888967220845e-28 | kg |
+| `MassQuarkTop` | `m_qt` | 3.0761614119611e-25 | kg |
 | `MassQuarkUp` | `m_qu` | 3.8505497507162585e-30 | kg |
-| `MassTau` | `m_τ` | 3.1675406620637455e-27 | kg |
+| `MassTau` | `m_τ` | 3.1676654483982603e-27 | kg |
 | `MolarGasConstant` | `R` | 8.31446261815324 | J K⁻¹ mol⁻¹ |
 | `NeutronMass` | `m_n` | 1.67492750056e-27 | kg |
 | `NewtonianConstantOfGravitation` | `G` | 6.6743e-11 | m³ kg⁻¹ s⁻² |
