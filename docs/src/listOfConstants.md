@@ -1,13 +1,11 @@
 ## List of Set of Constants
 
-This page lists every constant that ends up in `Cosmonstants.Constants`, including the CODATA2022 seed plus the extended astrophysics and high-energy physics entries listed under `src/constants`.  The same catalogue is re-exported through `Cosmonstants.Unitfull` (short aliases such as `c_0`, `ħ`, or `M☉`) and `Cosmonstants.Unitless` (unit-stripped numbers) so you can double-check exactly which symbols ship with the package.
-
 Each dataset listed below exports by default only the full
 long names of the constants.  Short aliases are provided for
 convenience, but they are not exported, to avoid polluting
 the main namespace with dozens of short-named variables.
-Users can import the short names they use most frequently,
-as demonstrated by the aliases in `Cosmonstants.Unitfull`.
+Users can to import the short names of the variables they
+use most frequently, as shown in the examples above.
 
 
 | Long name | Short | Value | Unit |
