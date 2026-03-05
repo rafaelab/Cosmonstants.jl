@@ -78,8 +78,9 @@ const referencesDict = Dict(
 @doc """
 Get the full reference for a given source of information.
 """
-@inline fullReference(ref::AbstractString) = begin
-	return referencesDict[replace(ref, " " => "")]
+@inline function fullReference(ref::AbstractString)
+	normalized = replace(strip(ref), " " => "")
+	return get(referencesDict, normalized, "unknown reference")
 end
 
 
