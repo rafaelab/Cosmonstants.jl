@@ -45,4 +45,16 @@
 	"IAU2015"
 )
 
+# uncertainties are available (marked here as 0)
+@constant(EnergyDensityCMB,
+	u_CMB,
+	"energy density of the Cosmic Microwave Background",
+	4.19e-14,
+	BigFloat(4.19e-14),
+	u"J / m ^ 3",
+	0.0,
+	BigFloat(0.),
+	"PDG2022"
+)
+
 # ----------------------------------------------------------------------------------------------- #
