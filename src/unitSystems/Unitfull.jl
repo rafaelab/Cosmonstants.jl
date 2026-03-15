@@ -27,6 +27,7 @@ module Unitfull
 	const mₚ = m_p
 	const mₙ = m_n
 	const mₑ = m_e
+	const mₑc = mₑ * c
 	const mₑc² = mₑ * c²
 	const mₑ²c⁴ = mₑc² * mₑc²
 	const mₑc²ˆ² = mₑ²c⁴
