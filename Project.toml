@@ -11,11 +11,11 @@ Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
 [compat]
-Corpuscles = ">=2.1"
-Measurements = ">=2.10.0"
-PhysicalConstants = ">=0.2"
+Corpuscles = "2.1 - 2.4"
+Measurements = "2.11 - 2.14"
+PhysicalConstants = "0.2"
 Reexport = "1"
-Unitful = ">=1.22"
+Unitful = "1.22 - 1.28"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
