@@ -1,5 +1,7 @@
 # ----------------------------------------------------------------------------------------------- #
 # 
+# The definitions below are defined as *units* in UnitfulAstro.jl, but are also defined as constants here for convenience.
+
 @constant(SolarMass,
 	M☉,
 	"mass of the Sun",
@@ -45,6 +47,9 @@
 	"IAU2015"
 )
 
+
+# ----------------------------------------------------------------------------------------------- #
+# 
 # uncertainties are available (marked here as 0)
 @constant(EnergyDensityCMB,
 	u_CMB,

@@ -4,6 +4,7 @@ using Measurements
 using PhysicalConstants
 using PhysicalConstants.CODATA2022
 using Unitful
+using UnitfulAstro
 
 import Corpuscles: 
 	Particle
