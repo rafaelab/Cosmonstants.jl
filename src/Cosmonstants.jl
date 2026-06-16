@@ -6,6 +6,7 @@ using PhysicalConstants.CODATA2022
 using Reexport
 @reexport using Measurements
 @reexport using Unitful
+@reexport using UnitfulAstro
 
 
 import PhysicalConstants: 
