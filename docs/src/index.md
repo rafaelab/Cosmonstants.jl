@@ -2,11 +2,6 @@
 
 Cosmonstants.jl builds on top of PhysicalConstants.jl to deliver extra constants (astrophysics, high-energy physics, and Corpuscles-derived particle masses) together with simple utilities for working with multiple unit systems.
 
-```@meta
-DocTestSetup = quote
-	using Cosmonstants
-end
-```
 
 ## Highlights
 

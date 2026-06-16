@@ -1,11 +1,8 @@
-## List of Set of Constants
+## List of constants
 
-Each dataset listed below exports by default only the full
-long names of the constants.  Short aliases are provided for
-convenience, but they are not exported, to avoid polluting
-the main namespace with dozens of short-named variables.
-Users can to import the short names of the variables they
-use most frequently, as shown in the examples above.
+Each dataset listed below exports by default only the full long names of the constants.  
+Short aliases are provided for convenience, but they are not exported, to avoid polluting the main namespace with dozens of short-named variables.
+Users can import the short names of the variables they use most frequently, as shown in the examples above.
 
 
 | Long name | Short | Value | Unit |
@@ -23,6 +20,7 @@ use most frequently, as shown in the examples above.
 | `ElectromagneticFineStructureConstant` | `α` | 0.0072973525643 |  |
 | `ElectronMass` | `m_e` | 9.1093837139e-31 | kg |
 | `ElementaryCharge` | `e` | 1.602176634e-19 | C |
+| `EnergyDensityCMB` | `u_CMB` | 4.19e-14 | J m⁻³ |
 | `FermiCouplingConstant` | `G_F` | 1.4365331758849134e-11 | J⁻² |
 | `FineStructureConstant` | `α` | 0.0072973525643 |  |
 | `GravitationalFineStructureConstant` | `α_G` | 5.906149413805094e-39 |  |

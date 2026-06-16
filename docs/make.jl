@@ -15,14 +15,11 @@ listOfConstants = getListOfConstants()
 open(joinpath(@__DIR__, "src", "listOfConstants.md"), "w") do io
     print(io, 
 		"""
-		## List of Set of Constants
+		## List of constants
 
-		Each dataset listed below exports by default only the full
-		long names of the constants.  Short aliases are provided for
-		convenience, but they are not exported, to avoid polluting
-		the main namespace with dozens of short-named variables.
-		Users can to import the short names of the variables they
-		use most frequently, as shown in the examples above.
+		Each dataset listed below exports by default only the full long names of the constants.  
+		Short aliases are provided for convenience, but they are not exported, to avoid polluting the main namespace with dozens of short-named variables.
+		Users can import the short names of the variables they use most frequently, as shown in the examples above.
 		"""
 	)
 	println(io)
@@ -47,6 +44,7 @@ makedocs(;
 	pages = [
 		"Home" => "index.md",
 		"List of constants" => "listOfConstants.md",
+		"Unit toggler" => "unitToggler.md",
 	]
 )
 
