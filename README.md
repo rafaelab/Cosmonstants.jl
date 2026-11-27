@@ -67,12 +67,14 @@ Run the unit suite with the project environment:
 julia --project=. test/runtests.jl
 ```
 
-The pre-built `docs/` directory contains Documenter.jl-powered HTML documentation. To rebuild it locally:
+The `docs/` directory contains the Documenter.jl sources. To build the documentation locally, run these commands from the repository root:
 
 ```bash
-cd docs
+julia --project=docs -e 'using Pkg; Pkg.develop(path = "."); Pkg.instantiate()'
 julia --project=docs docs/make.jl
 ```
+
+The setup command makes the docs environment use this checkout of Cosmonstants, allowing Documenter to generate source links from its Git remote. The generated HTML is written to `docs/build/`.
 
 Visit https://rafaelab.github.io/Cosmonstants.jl/index.html for the hosted version.
 

@@ -47,7 +47,7 @@ Users can import the short names of the variables they use most frequently, as s
 | `NeutronMass` | `m_n` | 1.67492750056e-27 | kg |
 | `NewtonianConstantOfGravitation` | `G` | 6.6743e-11 | m³ kg⁻¹ s⁻² |
 | `PlanckConstant` | `h` | 6.62607015e-34 | J s |
-| `PlanckEnergy` | `E_Pl` | 5.413655629189003e9 | J |
+| `PlanckEnergy` | `E_Pl` | 1.9560816366983728e9 | J |
 | `PlanckLength` | `ℓ_Pl` | 1.6162550244237053e-35 | m |
 | `PlanckMass` | `m_Pl` | 2.1764343427178984e-8 | kg |
 | `PlanckTime` | `t_Pl` | 5.391246448313604e-44 | s |
