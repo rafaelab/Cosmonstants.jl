@@ -60,13 +60,15 @@ const MassNeutron = NeutronMass
 
 # ----------------------------------------------------------------------------------------------- #
 # 
+# Round the high-precision measurements so uncertainties agree exactly across precisions.
+# Converting the full measurement preserves correlations with the underlying constants.
 @derived_constant(PlanckMass,
 	m_Pl,
 	"Planck mass",
 	convert(Float64, ustrip(sqrt(big(ħc) / big(G)))),
 	convert(BigFloat, ustrip(sqrt(big(ħc) / big(G)))),
 	u"kg",
-	sqrt(measurement(ħc) / measurement(G)),
+	convert(Measurement{Float64}, ustrip(measurement(BigFloat, PlanckMass))) * u"kg",
 	sqrt(measurement(BigFloat, ħc) / measurement(BigFloat, G)),
 	"definition"
 )
@@ -77,7 +79,7 @@ const MassNeutron = NeutronMass
 	convert(Float64, ustrip(sqrt(big(ħ) * big(c_0) ^ 5 / big(G)))),
 	convert(BigFloat, ustrip(sqrt(big(ħ) * big(c_0) ^ 5 / big(G)))),
 	u"J",
-	sqrt(measurement(ħ) * measurement(c_0) ^ 5 / measurement(G)),
+	convert(Measurement{Float64}, ustrip(measurement(BigFloat, PlanckEnergy))) * u"J",
 	sqrt(measurement(BigFloat, ħ) * measurement(BigFloat, c_0) ^ 5 / measurement(BigFloat, G)),
 	"definition"
 )
@@ -88,7 +90,7 @@ const MassNeutron = NeutronMass
 	convert(Float64, ustrip( sqrt(big(ħ) * big(G) / big(c_0) ^ 3))),
 	convert(BigFloat, ustrip( sqrt(big(ħ) * big(G) / big(c_0) ^ 3))),
 	u"m",
-	sqrt(measurement(ħ) * measurement(G) / measurement(c_0) ^ 3),
+	convert(Measurement{Float64}, ustrip(measurement(BigFloat, PlanckLength))) * u"m",
 	sqrt(measurement(BigFloat, ħ) * measurement(BigFloat, G) / measurement(BigFloat, c_0) ^ 3),
 	"definition"
 )
@@ -100,7 +102,7 @@ const MassNeutron = NeutronMass
 	ustrip(sqrt(big(ħ) * big(G) / big(c_0) ^ 5))),
 	convert(BigFloat, ustrip( sqrt( big(ħ) * big(G) / big(c_0) ^ 5))),
 	u"s",
-	sqrt(measurement(ħ) * measurement(G) / measurement(c_0) ^ 5),
+	convert(Measurement{Float64}, ustrip(measurement(BigFloat, PlanckTime))) * u"s",
 	sqrt(measurement(BigFloat, ħ) * measurement(BigFloat, G) / measurement(BigFloat, c_0) ^ 5),
 	"definition"
 )

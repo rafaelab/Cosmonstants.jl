@@ -11,6 +11,7 @@ import Cosmonstants:
 	getCorpusclesParticleMassValue
 using Measurements: 
 	measurement, 
+	value,
 	uncertainty
 
 
